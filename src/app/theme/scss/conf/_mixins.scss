@@ -1,0 +1,14 @@
+@mixin googleFont($fonts-list...) {
+    @each $font in $fonts-list {
+        @import url(https://fonts.googleapis.com/css?family=#{$font});
+    }
+}
+
+
+
+@mixin centerer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

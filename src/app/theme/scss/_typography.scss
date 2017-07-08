@@ -1,0 +1,14 @@
+@include googleFont("Source+Code+Pro");
+@include googleFont("Leckerli+One");
+
+* {
+    font-family: $font-family;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: $secundary;
+}
+
+p {
+    color: $secundary;
+}

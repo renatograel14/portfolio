@@ -1,0 +1,62 @@
+#menu {
+    ul {
+        display: none;
+
+        @include breakpoint($large) {
+            float: right;
+            display: block;
+            width: $full-width / 1.5;
+        }
+
+
+        // background: susy-svg-grid();
+        overflow: hidden;
+        list-style: none;
+
+        li {
+            float: left;
+            text-align: center;
+            width: $sixth-width;
+            padding: ($menu-height / 2) 0;
+            line-height: 0;
+
+            a {
+                color: $secundary;
+                text-decoration: none;
+                display: block;
+
+                &:hover {
+                    animation-name: floating-smooth;
+                    animation-duration: 3s;
+                    animation-iteration-count: infinite;
+                    animation-timing-function: linear;
+                }
+            }
+
+            &::after {
+                content: '';
+                opacity: 0;
+                display: block;
+                position: absolute;
+                top: 0;
+                width: $sixth-width;
+                height: $menu-height;
+                z-index: -10;
+
+                @include background-image(linear-gradient(to bottom right, $secundary, $accent, $accent, $secundary));
+                @include border-radius($menu-height);
+
+                transition: 0.5s ease-out;
+
+                @include breakpoint($large) {
+                    width: $sixth-width / 1.5;
+                }
+            }
+
+            &:hover::after, &:focus::after {
+                opacity: .7;
+            }
+            
+        }
+    }
+}
