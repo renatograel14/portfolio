@@ -23,8 +23,8 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     z-index: -10;
 }
 
@@ -52,7 +52,15 @@ body {
 }
 
 .last {
-    margin-right: 0 !important;
+    @include breakpoint($small) {
+        margin-right: 0 !important;
+    }
+}
+
+.last-small {
+    @include breakpoint($small $medium) {
+        margin-right: 0 !important;
+    }
 }
 
 .block-list {
@@ -61,16 +69,31 @@ body {
 }
 
 .block {
-    float: left;
-    width: span(3);
-    margin-top: (gutter() * 3);
-    margin-right: gutter();
+    width: span(10);
     color: $accent;
     background-color: $secundary;
+    margin: (gutter() * 3) auto;
+    overflow: hidden;
+
+    @include breakpoint($small) {
+        float: left;
+        margin-right: gutter();
+        margin-top: gutter() * 3;
+        width: span(6);
+    }
+
+
+    @include breakpoint($medium) {
+        float: left;
+        margin-right: gutter();
+        margin-top: gutter() * 3;
+        width: span(3);
+    }
+
 
     h3, p {
         color: $accent;
-        margin: gutter() * 2;
+        margin: 10px;
     }
 
     img {
