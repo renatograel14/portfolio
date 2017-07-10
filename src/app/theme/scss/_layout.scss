@@ -18,6 +18,10 @@ body {
     clear: both;
 }
 
+.hide {
+    display: none !important;
+}
+
 .bg-darken {
     background: transparentize(black, 0.6);
     position: absolute;
@@ -48,7 +52,7 @@ body {
 
 .separator {
     clear: both;
-    margin-top: gutter() * 2;
+    margin-top: $menu-height;
 }
 
 .last {

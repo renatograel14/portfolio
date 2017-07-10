@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  menuStatus: boolean = true;
+
+  toggleMenu() {
+    this.menuStatus = !this.menuStatus;
+    console.log(this.menuStatus);
+ }
 }

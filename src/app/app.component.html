@@ -1,15 +1,16 @@
-<nav id="menu">
+<a class="fa fa-bars menu-icon menu-icon" (click)="toggleMenu()"></a>
+<nav id="menu" [class.hide-menu]="menuStatus">
     <ul class="right">
-        <li><a [routerLink]="['/exp']">Experience</a></li>
-        <li><a [routerLink]="['']">Knowlegde</a></li>
-        <li><a [routerLink]="['']">Academic</a></li>
-        <li><a [routerLink]="['']">Works</a></li>
-        <li><a [routerLink]="['']">About me</a></li>
-        <li><a [routerLink]="['']">Contact me</a></li>
+        <li><a (click)="toggleMenu()" [routerLink]="['/exp']">Experience</a></li>
+        <li><a (click)="toggleMenu()" [routerLink]="['']">Knowlegde</a></li>
+        <li><a (click)="toggleMenu()" [routerLink]="['']">Academic</a></li>
+        <li><a (click)="toggleMenu()" [routerLink]="['']">Works</a></li>
+        <li><a (click)="toggleMenu()" [routerLink]="['']">About me</a></li>
+        <li><a (click)="toggleMenu()" [routerLink]="['']">Contact me</a></li>
     </ul>
 </nav>
 <div class="clr"></div>
 <div class="bg-darken"> </div>
 <router-outlet>
-    
+
 </router-outlet>

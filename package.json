@@ -36,6 +36,7 @@
     "compass-mixins": "^0.12.10",
     "compass-sass-mixins": "^0.12.7",
     "css-ripple-effect": "^1.0.5",
+    "font-awesome": "^4.7.0",
     "jasmine-core": "~2.6.2",
     "jasmine-spec-reporter": "~4.1.0",
     "karma": "~1.7.0",
