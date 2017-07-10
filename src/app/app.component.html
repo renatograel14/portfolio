@@ -1,21 +1,15 @@
 <nav id="menu">
-    <ul>
-        <li><a href="#">Experience</a></li>
-        <li><a href="#">Knowlegde</a></li>
-        <li><a href="#">Academic</a></li>
-        <li><a href="#">Works</a></li>
-        <li><a href="#">About me</a></li>
-        <li><a href="#">Contact me</a></li>
+    <ul class="right">
+        <li><a [routerLink]="['/exp']">Experience</a></li>
+        <li><a [routerLink]="['']">Knowlegde</a></li>
+        <li><a [routerLink]="['']">Academic</a></li>
+        <li><a [routerLink]="['']">Works</a></li>
+        <li><a [routerLink]="['']">About me</a></li>
+        <li><a [routerLink]="['']">Contact me</a></li>
     </ul>
 </nav>
+<div class="clr"></div>
+<div class="bg-darken"> </div>
 <router-outlet>
-    <div class="center" style="text-align: center">
-        <h1> Portfolio </h1>
-        <br>
-        <p>
-            This is my portfolio. Be welcome and feel free!
-        </p>
-        <br>
-        <button class="btn btn-commin floating">Commin and sitdown</button>
-    </div>
+    
 </router-outlet>

@@ -43,7 +43,7 @@
                 height: $menu-height;
                 z-index: -10;
 
-                @include background-image(linear-gradient(to bottom right, $secundary, $accent, $accent, $secundary));
+                @include background-image(linear-gradient(to bottom right, $secundary, transparent, transparent, $secundary));
                 @include border-radius($menu-height);
 
                 transition: 0.5s ease-out;

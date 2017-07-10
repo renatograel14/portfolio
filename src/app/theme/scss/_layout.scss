@@ -10,11 +10,31 @@ html, body {
 }
 
 body {
-    background: $accent;
+    background: url(~assets/img/WebDesignon.jpg);
+    background-size: cover;
 }
 
+.clr {
+    clear: both;
+}
+
+.bg-darken {
+    background: transparentize(black, .6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -10;
+}
 
 
 .center {
     @include centerer;
+}
+
+.card {
+    width: span(12);
+    padding: gutter() * 2;
+    background: $accent;
 }
