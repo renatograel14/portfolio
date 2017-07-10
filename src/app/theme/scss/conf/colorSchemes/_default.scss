@@ -1,4 +1,11 @@
 @import 'pallets';
 
 $accent: map-get($red, 500);
+$alert: map-get($yellow, 500);
 $secundary: white;//map-get($red,50)
+
+$block-colors: (
+    'yellow': map-get($yellow, 500),
+    'green': map-get($light-green, 500),
+    'blue': map-get($blue, 900)
+)

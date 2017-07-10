@@ -19,7 +19,7 @@ body {
 }
 
 .bg-darken {
-    background: transparentize(black, .6);
+    background: transparentize(black, 0.6);
     position: absolute;
     top: 0;
     left: 0;
@@ -28,13 +28,63 @@ body {
     z-index: -10;
 }
 
-
 .center {
     @include centerer;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
 }
 
 .card {
     width: span(12);
     padding: gutter() * 2;
     background: $accent;
+}
+
+.separator {
+    clear: both;
+    margin-top: gutter() * 2;
+}
+
+.last {
+    margin-right: 0 !important;
+}
+
+.block-list {
+    width: $full-width;
+    overflow: hidden;
+}
+
+.block {
+    float: left;
+    width: span(3);
+    margin-top: (gutter() * 3);
+    margin-right: gutter();
+    color: $accent;
+    background-color: $secundary;
+
+    h3, p {
+        color: $accent;
+        margin: gutter() * 2;
+    }
+
+    img {
+        width: 100%;
+    }
+}
+
+@each $color in "blue", "yellow", "green" {
+    .#{$color} {
+        background-color: map-get($block-colors, #{$color});
+    }
+}
+
+.animation {
+    position: absolute;
+    width: $full-width;
 }
