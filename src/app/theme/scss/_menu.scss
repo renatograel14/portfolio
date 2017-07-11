@@ -14,14 +14,17 @@
 }
 
 .menu-icon {
+    display: none;
+
+    font-style: italic;
     float: right;
     padding: $menu-height / 2;
     line-height: 0;
     font-size: 150%;
-    display: none;
     text-align: right;
     position: relative;
     z-index: 10;
+    cursor: pointer;
 
     @include breakpoint($tiny $large) {
         display: block;
@@ -29,7 +32,7 @@
 
 
     &:hover, &:focus {
-        opacity: .5;
+        color: lighten($accent, 30%);
     }
 }
 

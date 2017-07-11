@@ -1,13 +1,13 @@
 <a [routerLink]="['']" class="home-link"> Renato Grael Teixeira </a>
-<a class="fa fa-bars menu-icon menu-icon" (click)="toggleMenu()"></a>
+<a class="menu-icon" (click)="toggleMenu()">Menu</a>
 <nav id="menu" [class.hide-menu]="menuStatus">
-    <ul class="right">
-        <li #page [class.active]="currentPage(page)"><a (click)="toggleMenu()" [routerLink]="['/exp']">Experience</a></li>
-        <li [class.active]="false"><a (click)="toggleMenu()" [routerLink]="['']">Knowlegde</a></li>
-        <li [class.active]="false"><a (click)="toggleMenu()" [routerLink]="['']">Academic</a></li>
-        <li [class.active]="false"><a (click)="toggleMenu()" [routerLink]="['']">Works</a></li>
-        <li [class.active]="false"><a (click)="toggleMenu()" [routerLink]="['']">About me</a></li>
-        <li [class.active]="false"><a (click)="toggleMenu()" [routerLink]="['']">Contact me</a></li>
+    <ul id="listMenu" class="right">
+        <li id="exp"><a (click)="toggleMenu()" [routerLink]="['/exp']">Experience</a></li>
+        <li id="knowlegde"><a (click)="toggleMenu()" [routerLink]="['/']">Knowlegde</a></li>
+        <li id="academic"><a (click)="toggleMenu()" [routerLink]="['']">Academic</a></li>
+        <li id="works"><a (click)="toggleMenu()" [routerLink]="['']">Works</a></li>
+        <li id="about"><a (click)="toggleMenu()" [routerLink]="['']">About me</a></li>
+        <li id="contact"><a (click)="toggleMenu()" [routerLink]="['']">Contact me</a></li>
     </ul>
 </nav>
 <div class="clr"></div>

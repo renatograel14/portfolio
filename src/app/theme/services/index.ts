@@ -1,1 +1,1 @@
-export {} from 'global.service';
+export { GlobalService } from './global.service';

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { fadeInAnimation } from '../../theme/animations/router.transition';
+import { GlobalService } from '../../theme/services/global.service';
 
 @Component({
     selector: 'experience',
@@ -10,7 +11,9 @@ import { fadeInAnimation } from '../../theme/animations/router.transition';
 
 
 export class ExperienceComponent implements OnInit {
-    constructor() { }
+    constructor(private globalService: GlobalService) { }
 
-    ngOnInit() { }
+    ngOnInit() {
+        this.globalService.pageChanged('exp');
+    }
 }

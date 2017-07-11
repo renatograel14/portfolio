@@ -4,6 +4,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule, routedComponents } from './app.routing';
+import { PageGuard } from './theme/guards';
+import { GlobalService } from './theme/services';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,7 @@ import { AppRoutingModule, routedComponents } from './app.routing';
     BrowserModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [GlobalService, PageGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

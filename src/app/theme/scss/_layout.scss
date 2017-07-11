@@ -74,10 +74,11 @@ body {
 
 .block {
     width: span(10);
+    height: 350px;
     color: $accent;
     background-color: $secundary;
-    margin: (gutter() * 3) auto;
-    overflow: hidden;
+    margin: gutter() auto;
+    // overflow: hidden;
 
     @include breakpoint($small) {
         float: left;
@@ -100,8 +101,12 @@ body {
         margin: 10px;
     }
 
+
     img {
-        width: 100%;
+        display: block;
+        margin: 0 auto;
+        max-height: 150px;
+        width: auto;
     }
 }
 
