@@ -2,12 +2,12 @@
 <a class="fa fa-bars menu-icon menu-icon" (click)="toggleMenu()"></a>
 <nav id="menu" [class.hide-menu]="menuStatus">
     <ul class="right">
-        <li><a (click)="toggleMenu()" [routerLink]="['/exp']">Experience</a></li>
-        <li><a (click)="toggleMenu()" [routerLink]="['']">Knowlegde</a></li>
-        <li><a (click)="toggleMenu()" [routerLink]="['']">Academic</a></li>
-        <li><a (click)="toggleMenu()" [routerLink]="['']">Works</a></li>
-        <li><a (click)="toggleMenu()" [routerLink]="['']">About me</a></li>
-        <li><a (click)="toggleMenu()" [routerLink]="['']">Contact me</a></li>
+        <li #page [class.active]="currentPage(page)"><a (click)="toggleMenu()" [routerLink]="['/exp']">Experience</a></li>
+        <li [class.active]="false"><a (click)="toggleMenu()" [routerLink]="['']">Knowlegde</a></li>
+        <li [class.active]="false"><a (click)="toggleMenu()" [routerLink]="['']">Academic</a></li>
+        <li [class.active]="false"><a (click)="toggleMenu()" [routerLink]="['']">Works</a></li>
+        <li [class.active]="false"><a (click)="toggleMenu()" [routerLink]="['']">About me</a></li>
+        <li [class.active]="false"><a (click)="toggleMenu()" [routerLink]="['']">Contact me</a></li>
     </ul>
 </nav>
 <div class="clr"></div>

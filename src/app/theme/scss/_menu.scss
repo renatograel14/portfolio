@@ -1,11 +1,17 @@
+@mixin floating-link {
+    animation-name: floating-smooth;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
 .home-link {
     float: left;
     position: relative;
     text-decoration: none;
     padding: $menu-height / 2;
-    line-height: 0;    
+    line-height: 0;
 }
-
 
 .menu-icon {
     float: right;
@@ -103,10 +109,7 @@
                 display: block;
 
                 &:hover {
-                    animation-name: floating-smooth;
-                    animation-duration: 3s;
-                    animation-iteration-count: infinite;
-                    animation-timing-function: linear;
+                  @include floating-link();
                 }
             }
 
@@ -122,10 +125,9 @@
 
                 @include breakpoint($tiny $large) {
                     position: relative;
-                    margin: (-$menu-height / 2) 0;
-                    width: $full-width;
+                    margin: (-$menu-height / 2) auto;
+                    width: $full-width / 3;
                 }
-
 
                 @include background-image(linear-gradient(to bottom right, $secundary, transparent, transparent, $secundary));
                 @include border-radius($menu-height);
@@ -138,6 +140,10 @@
             }
 
             &:hover::after, &:focus::after {
+                opacity: .7;
+            }
+
+            &.active::after {
                 opacity: .7;
             }
         }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +9,12 @@ export class AppComponent {
   title = 'app';
   menuStatus: boolean = true;
 
+  currentPage(page : Element){
+    console.log(page.innerHTML);
+    return false;
+  }  
+
   toggleMenu() {
     this.menuStatus = !this.menuStatus;
-    console.log(this.menuStatus);
- }
+  }
 }
