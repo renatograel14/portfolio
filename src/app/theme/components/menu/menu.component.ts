@@ -1,14 +1,12 @@
-import { GlobalService, MenuService } from './theme/services';
-
-import { Component, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { GlobalService, MenuService } from "app/theme/services";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-menu',
+  templateUrl: './menu.component.html',
+  styleUrls: ['./menu.component.scss']
 })
-export class AppComponent {
-  title = 'app';
+export class MenuComponent implements OnInit {
   menuStatus: boolean = true;
 
   constructor(private globalService: GlobalService, private menu: MenuService) {

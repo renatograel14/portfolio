@@ -10,7 +10,7 @@ html, body {
 }
 
 body {
-    background: url(~assets/img/WebDesignon.jpg);
+    background: url(~assets/img/WebDesignon.jpg) fixed;
     background-size: cover;
 }
 
@@ -24,7 +24,7 @@ body {
 
 .bg-darken {
     background: transparentize(black, 0.6);
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -34,6 +34,12 @@ body {
 
 .center {
     @include centerer;
+}
+
+.center-large {
+    @include breakpoint($medium) {
+        @include centerer;
+    }
 }
 
 .left {
@@ -48,6 +54,11 @@ body {
     width: span(12);
     padding: gutter() * 2;
     background: $accent;
+}
+
+.animation {
+    position: absolute;
+    width: $full-width;
 }
 
 .separator {
@@ -74,10 +85,11 @@ body {
 
 .block {
     width: span(10);
-    height: 350px;
+    height: 300px;
     color: $accent;
     background-color: $secundary;
     margin: gutter() auto;
+
     // overflow: hidden;
 
     @include breakpoint($small) {
@@ -101,11 +113,10 @@ body {
         margin: 10px;
     }
 
-
     img {
         display: block;
         margin: 0 auto;
-        max-height: 150px;
+        max-height: 100px;
         width: auto;
     }
 }
@@ -114,9 +125,4 @@ body {
     .#{$color} {
         background-color: map-get($block-colors, #{$color});
     }
-}
-
-.animation {
-    position: absolute;
-    width: $full-width;
 }

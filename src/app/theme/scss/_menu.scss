@@ -40,7 +40,7 @@
     visibility: hidden;
     opacity: 0;
     transition: opacity .3s ease-out;
-
+    font-size: 105%;
     @include breakpoint($tiny $large) {
         opacity: 1;
         visibility: visible;

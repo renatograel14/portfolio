@@ -7,7 +7,7 @@ export class GlobalService {
     constructor() { }
 
     private _currentPage$: Subject<string> = new Subject();
-    public pages$ = this._currentPage$.asObservable();
+    public pagesNavigated$ = this._currentPage$.asObservable();
 
     public pageChanged(page: string) {
         this._currentPage$.next(page);
