@@ -2,12 +2,40 @@ import { Component, OnInit } from '@angular/core';
 import { GlobalService, MenuService } from "app/theme/services";
 
 @Component({
-  selector: 'app-menu',
+  selector: 'menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-  menuStatus: boolean = true;
+  menuHide: boolean = true;
+
+  pagesList = [
+    {
+      id: 'exp',
+      name: 'Experience',
+      path: ['/exp']
+    }, {
+      id: 'knowledge',
+      name: 'Knowledge',
+      path: ['']
+    }, {
+      id: 'academic',
+      name: 'Academic',
+      path: ['']
+    }, {
+      id: 'works',
+      name: 'Works',
+      path: ['']
+    }, {
+      id: 'about',
+      name: 'About me',
+      path: ['']
+    }, {
+      id: 'contact',
+      name: 'Contact me',
+      path: ['']
+    },
+  ]
 
   constructor(private globalService: GlobalService, private menu: MenuService) {
     globalService.pagesNavigated$
@@ -17,6 +45,6 @@ export class MenuComponent implements OnInit {
   ngOnInit() { }
 
   toggleMenu() {
-    this.menuStatus = !this.menuStatus;
+    this.menuHide = !this.menuHide;
   }
 }

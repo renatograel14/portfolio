@@ -10,6 +10,10 @@
     cursor: pointer;
     transition: transform .5s ease;
 
+    @include breakpoint($tiny $medium) {
+        font-size: 125%;
+    }
+
 
     &:hover {
         transform: scale(1.05);
@@ -46,7 +50,6 @@
 }
 
 .btn-commin {
-    // background: red;
     @include border-radius(20px);
     @include box-shadow(#333 1px 1px 1px);
 }

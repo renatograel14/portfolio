@@ -52,8 +52,19 @@ body {
 
 .card {
     width: span(12);
-    padding: gutter() * 2;
+    padding: 25px;
     background: $accent;
+    @include breakpoint($tiny $medium) {
+        font-size: 125%;
+    }
+
+
+    &.mobile {
+        height: 40%;
+        @include breakpoint($tiny $medium) {
+            height: 80%;
+        }
+    }
 }
 
 .animation {
@@ -66,18 +77,6 @@ body {
     margin-top: $menu-height;
 }
 
-.last {
-    @include breakpoint($small) {
-        margin-right: 0 !important;
-    }
-}
-
-.last-small {
-    @include breakpoint($small $medium) {
-        margin-right: 0 !important;
-    }
-}
-
 .block-list {
     width: $full-width;
     overflow: hidden;
@@ -85,39 +84,62 @@ body {
 
 .block {
     width: span(10);
-    height: 300px;
-    color: $accent;
-    background-color: $secundary;
-    margin: gutter() auto;
+    height: 350px;
+    border-bottom: 1px solid lighten($accent, 10%);
 
-    // overflow: hidden;
-
-    @include breakpoint($small) {
-        float: left;
-        margin-right: gutter();
-        margin-top: gutter() * 3;
-        width: span(6);
-    }
-
+    // background-color: $secundary;
+    margin: 20px auto;
 
     @include breakpoint($medium) {
         float: left;
         margin-right: gutter();
         margin-top: gutter() * 3;
+        width: span(6);
+        border-bottom: none;
+        border-right: 1px solid lighten($accent, 10%);
+    }
+
+
+    @include breakpoint($large) {
+        float: left;
+        margin-right: gutter();
+        margin-top: gutter() * 3;
         width: span(3);
+        border-bottom: none;
+        border-right: 1px solid lighten($accent, 10%);
     }
 
 
     h3, p {
-        color: $accent;
+        color: white;
+
+        // color: $accent;
         margin: 10px;
     }
 
     img {
+        @include border-radius(15px);
+
+        background-color: white;
         display: block;
         margin: 0 auto;
         max-height: 100px;
         width: auto;
+    }
+
+    &.last {
+        border: none;
+
+        @include breakpoint($medium) {
+            margin-right: 0 !important;
+        }
+    }
+
+    &.last-small {
+        @include breakpoint($medium $large) {
+            margin-right: 0 !important;
+            border: none;
+        }
     }
 }
 

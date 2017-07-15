@@ -1,12 +1,9 @@
 <a [routerLink]="['']" class="home-link"> Renato Grael Teixeira </a>
 <a class="menu-icon" (click)="toggleMenu()">Menu</a>
-<nav id="menu" [class.hide-menu]="menuStatus">
-    <ul id="listMenu" class="right">
-        <li id="exp"><a (click)="toggleMenu()" [routerLink]="['/exp']">Experience</a></li>
-        <li id="knowlegde"><a (click)="toggleMenu()" [routerLink]="['/']">Knowlegde</a></li>
-        <li id="academic"><a (click)="toggleMenu()" [routerLink]="['']">Academic</a></li>
-        <li id="works"><a (click)="toggleMenu()" [routerLink]="['']">Works</a></li>
-        <li id="about"><a (click)="toggleMenu()" [routerLink]="['']">About me</a></li>
-        <li id="contact"><a (click)="toggleMenu()" [routerLink]="['']">Contact me</a></li>
-    </ul>
+<nav id="menu" [class.hide-menu]="menuHide" (click)="menuHide = true">
+  <ul id="listMenu" class="right">
+    <li *ngFor="let page of pagesList" id="{{page.id}}" >
+      <a [routerLink]="page.path"> {{page.name}} </a>
+    </li>
+  </ul>
 </nav>
