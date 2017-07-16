@@ -5,7 +5,7 @@ import { GlobalService } from '../../theme/services/global.service';
 @Component({
     selector: 'experience',
     templateUrl: 'experience.component.html',
-    animations: [fadeInAnimation],
+    animations: [fadeInAnimation()],
     host: { '[@fadeInAnimation]': '' }
 })
 

@@ -15,7 +15,6 @@
 
 .menu-icon {
     display: none;
-
     font-style: italic;
     float: right;
     padding: $menu-height / 2;
@@ -41,6 +40,7 @@
     opacity: 0;
     transition: opacity .3s ease-out;
     font-size: 105%;
+
     @include breakpoint($tiny $large) {
         opacity: 1;
         visibility: visible;
@@ -83,7 +83,7 @@
 
         @include breakpoint($large) {
             display: block;
-            width: $full-width / 1.5;
+            width: $full-width / 2;
         }
 
 
@@ -94,9 +94,10 @@
         li {
             float: left;
             text-align: center;
-            width: $sixth-width;
+            width: $fourth-width;
             padding: ($menu-height / 2) 0;
             line-height: 0;
+            position: relative;
 
             @include breakpoint($tiny $large) {
                 margin-top: gutter();
@@ -112,7 +113,7 @@
                 display: block;
 
                 &:hover {
-                  @include floating-link();
+                    @include floating-link;
                 }
             }
 
@@ -122,24 +123,22 @@
                 display: block;
                 position: absolute;
                 top: 0;
-                width: $sixth-width;
+                width: $full-width;
                 height: $menu-height;
                 z-index: -10;
 
                 @include breakpoint($tiny $large) {
                     position: relative;
                     margin: (-$menu-height / 2) auto;
-                    width: $full-width / 3;
+                    width: $full-width / 2;
                 }
+
+
 
                 @include background-image(linear-gradient(to bottom right, $secundary, transparent, transparent, $secundary));
                 @include border-radius($menu-height);
 
                 transition: 0.5s ease-out;
-
-                @include breakpoint($large) {
-                    width: $sixth-width / 1.5;
-                }
             }
 
             &:hover::after, &:focus::after {

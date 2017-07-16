@@ -1,3 +1,23 @@
+@keyframes expand {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes reduce {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.05);
+    }
+}
+
 .btn {
     background: $secundary;
     border-radius: 5px;
@@ -8,15 +28,19 @@
     border: none;
     color: darker($accent, 30%);
     cursor: pointer;
-    transition: transform .5s ease;
 
     @include breakpoint($tiny $medium) {
+        animation: expand 300ms ease forwards;        
         font-size: 125%;
     }
 
 
+    @include border-radius(20px);
+
+    @include box-shadow(#333 1px 1px 1px);
+
     &:hover {
-        transform: scale(1.05);
+        animation: expand 300ms ease forwards;
     }
 
     &:focus {
@@ -24,29 +48,16 @@
     }
 
     &:active {
-        transform: scale(1);
+        animation: expand 300ms ease reverse;
     }
 }
 
 .floating {
+    position: relative;
     animation-name: floating;
     animation-duration: 3s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
-    transition: .5s ease;
-
-    &:hover {
-        animation: none;
-        transform: scale(1.05);
-    }
-
-    &:focus {
-        outline: none;
-    }
-
-    &:active {
-        transform: scale(1);
-    }
 }
 
 .btn-commin {

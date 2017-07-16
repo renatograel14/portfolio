@@ -10,7 +10,7 @@ import { NgaModule } from "app/theme";
 @NgModule({
   declarations: [
     AppComponent,
-    ...routedComponents
+    ...routedComponents,
   ],
   imports: [
     AppRoutingModule,

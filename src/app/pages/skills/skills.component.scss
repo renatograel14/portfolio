@@ -1,0 +1,11 @@
+.animation-test {
+    margin: 20px;
+    height: 50px;
+    width: 100px;
+    background: red;
+    border-radius: 20px;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}

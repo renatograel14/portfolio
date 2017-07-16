@@ -4,7 +4,7 @@ import { fadeInAnimation } from '../../theme/animations/router.transition';
 @Component({
     selector: 'welcome',
     templateUrl: 'welcome.component.html',
-    animations: [fadeInAnimation],
+    animations: [fadeInAnimation()],
     host: { '[@fadeInAnimation]': '' }
 })
 
