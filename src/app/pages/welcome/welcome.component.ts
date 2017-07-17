@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { fadeInAnimation } from '../../theme/animations/router.transition';
+import { Component, HostBinding, OnInit } from '@angular/core';
+import { fadeinTransition } from '../../theme/animations/router.transition';
 
 @Component({
     selector: 'welcome',
     templateUrl: 'welcome.component.html',
-    animations: [fadeInAnimation()],
-    host: { '[@fadeInAnimation]': '' }
+    styleUrls: ['./welcome.component.scss'],
+    animations: [fadeinTransition()],
 })
 
 export class WelcomeComponent implements OnInit {
+    @HostBinding('@fadeinTransition') routerTransition = true;
+
     constructor() { }
     ngOnInit() { }
 }

@@ -1,12 +1,20 @@
-// import the required animation functions from the angular animations module
-import { trigger, state, animate, transition, style } from '@angular/animations';
+import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
 
-export const fadeInAnimation = ()=>{
-  // trigger name for attaching this animation to an element using the [@triggerName] syntax
-  return trigger('fadeInAnimation', [
+export const fadeinTransition = () => {
+
+  return trigger('fadeinTransition', [
     transition(':enter', [
-      style({ opacity: 0 }),
-      animate('.3s', style({ opacity: 1 }))
+      style({
+        opacity: 0
+      }),
+      animate('500ms ease-in')
+    ]),
+    transition(':leave', [
+      animate('300ms ease-out', keyframes([
+        style({
+          opacity: 0,
+        })
+      ]))
     ])
   ]);
 }
