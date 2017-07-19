@@ -1,3 +1,8 @@
 :host {
     display: block;
+    height: calc(100% - 100px);
+
+    @media (max-width: 900px) {
+        height: calc(100% - 50px);
+    }
 }

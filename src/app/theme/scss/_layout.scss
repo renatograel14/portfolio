@@ -14,12 +14,25 @@ body {
     background-size: cover;
 }
 
+footer {
+    text-align: right;
+    color: white;
+    line-height: 0;
+    padding: $menu-height / 2;
+}
+
 .clr {
     clear: both;
 }
 
 .hide {
     display: none !important;
+}
+
+.container {
+    display: inline-block;
+    width: 100%;
+    height: 80%;
 }
 
 .bg-darken {
@@ -71,6 +84,18 @@ body {
 
 .welcome {
     font-size: 110%;
+
+    @include background-image(radial-gradient(250px 250px, transparentize(black, 0.1) 50px, transparent));
+
+    height: 500px;
+    width: 500px;
+
+    @include breakpoint($tiny $small) {
+        @include background-image(radial-gradient(100px 100px, transparentize(black, 0.1) 50px, transparent));
+
+        height: 200px;
+        width: 200px;
+    }
 }
 
 .animation {
@@ -79,13 +104,31 @@ body {
 }
 
 .separator {
-    clear: both;
-    margin-top: $menu-height;
+    display: block;
+    height: $menu-height;
 }
 
 .block-list {
     width: $full-width;
     overflow: hidden;
+}
+
+.vignette {
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 500ms ease;
+
+    @include box-shadow(0 50px 100px -25px rgba(0, 0, 0, 0.9) inset);
+
+    @include breakpoint($tiny $medium) {
+        &.visible {
+            opacity: 1;
+        }
+    }
 }
 
 .block {

@@ -5,12 +5,20 @@
     animation-timing-function: linear;
 }
 
+
+
 .home-link {
     float: left;
     position: relative;
     text-decoration: none;
     padding: $menu-height / 2;
     line-height: 0;
+
+    @include breakpoint($tiny $medium) {
+        position: fixed;
+        left: 0;
+        z-index: 10;
+    }
 }
 
 .menu-icon {
@@ -25,8 +33,10 @@
     z-index: 10;
     cursor: pointer;
 
-    @include breakpoint($tiny $large) {
+    @include breakpoint($tiny $medium) {
         display: block;
+        position: fixed;
+        right: 0;
     }
 
 
@@ -39,9 +49,9 @@
     visibility: hidden;
     opacity: 0;
     transition: opacity .3s ease-out;
-    font-size: 105%;
+    font-size: 120%;
 
-    @include breakpoint($tiny $large) {
+    @include breakpoint($tiny $medium) {
         opacity: 1;
         visibility: visible;
         background-color: $accent;
@@ -56,7 +66,7 @@
             visibility: hidden !important;
             opacity: 0;
 
-            @include breakpoint($large) {
+            @include breakpoint($medium) {
                 opacity: 1;
                 visibility: visible !important;
             }
@@ -64,7 +74,7 @@
     }
 
 
-    @include breakpoint($large) {
+    @include breakpoint($medium) {
         visibility: visible;
         opacity: 1;
         display: block;
@@ -74,14 +84,16 @@
     ul {
         display: none;
 
-        @include breakpoint($tiny $large) {
-            margin: ($menu-height / 2) 0;
+        @include breakpoint($tiny $medium) {
+            @include centerer;
+
+            width: $full-width / 2;
             float: none !important;
             display: block;
         }
 
 
-        @include breakpoint($large) {
+        @include breakpoint($medium) {
             display: block;
             width: $full-width / 2;
         }
@@ -99,7 +111,7 @@
             line-height: 0;
             position: relative;
 
-            @include breakpoint($tiny $large) {
+            @include breakpoint($tiny $medium) {
                 margin-top: gutter();
                 font-size: 150%;
                 width: 100%;
@@ -127,12 +139,11 @@
                 height: $menu-height;
                 z-index: -10;
 
-                @include breakpoint($tiny $large) {
+                @include breakpoint($tiny $medium) {
                     position: relative;
                     margin: (-$menu-height / 2) auto;
-                    width: $full-width / 2;
+                    width: $full-width;
                 }
-
 
 
                 @include background-image(linear-gradient(to bottom right, $secundary, transparent, transparent, $secundary));

@@ -1,3 +1,5 @@
+import { PageHelper } from '../helpers/page.helper';
+
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot } from '@angular/router';
 import { GlobalService } from "app/theme/services";
@@ -11,6 +13,7 @@ export class PageGuard implements CanActivate {
         
         let page = state.url.match(/\/(.*)/)[1];
         this.globalService.pageChanged(page);
+        PageHelper.scrollTop();
         return true;
     }
 }

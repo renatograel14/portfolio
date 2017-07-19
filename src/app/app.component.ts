@@ -1,6 +1,10 @@
 import { GlobalService, MenuService } from './theme/services';
 
-import { Component, ElementRef } from '@angular/core';
+import { Component, ElementRef, HostListener } from '@angular/core';
+import { ViewChild } from '@angular/core/src/metadata/di';
+
+
+
 
 @Component({
   selector: 'app-root',
@@ -10,6 +14,7 @@ import { Component, ElementRef } from '@angular/core';
 export class AppComponent {
   title = 'app';
   menuStatus: boolean = true;
+  scrollStatus;
 
   constructor(private globalService: GlobalService, private menu: MenuService) {
     globalService.pagesNavigated$
@@ -20,5 +25,10 @@ export class AppComponent {
 
   toggleMenu() {
     this.menuStatus = !this.menuStatus;
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  onScroll(event) {
+    this.scrollStatus = event.target.scrollingElement.scrollTop;
   }
 }
