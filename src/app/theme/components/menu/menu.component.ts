@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { GlobalService, MenuService } from "app/theme/services";
+import { Component, HostListener, OnInit } from '@angular/core';
+import { GlobalService, MenuService } from 'app/theme/services';
 
 @Component({
   selector: 'menu',
@@ -8,7 +8,7 @@ import { GlobalService, MenuService } from "app/theme/services";
 })
 export class MenuComponent implements OnInit {
   menuHide: boolean = true;
-
+  scrollStatus;
   pagesList = [
     {
       id: 'exp',
@@ -38,5 +38,10 @@ export class MenuComponent implements OnInit {
 
   toggleMenu() {
     this.menuHide = !this.menuHide;
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  onScroll(event) {
+    this.scrollStatus = event.target.scrollingElement.scrollTop;
   }
 }

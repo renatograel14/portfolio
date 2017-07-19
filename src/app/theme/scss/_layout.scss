@@ -113,23 +113,6 @@ footer {
     overflow: hidden;
 }
 
-.vignette {
-    opacity: 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transition: opacity 500ms ease;
-
-    @include box-shadow(0 50px 100px -25px rgba(0, 0, 0, 0.9) inset);
-
-    @include breakpoint($tiny $medium) {
-        &.visible {
-            opacity: 1;
-        }
-    }
-}
 
 .block {
     width: span(10);

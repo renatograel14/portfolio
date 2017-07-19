@@ -1,6 +1,6 @@
 import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
 
-export const fadeinTransition = () => {
+export function fadeinTransition () {
 
   return trigger('fadeinTransition', [
     transition(':enter', [

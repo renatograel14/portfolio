@@ -20,16 +20,18 @@
 
 .btn {
     background: $secundary;
-    transition: all 100ms ease;
+
+    @include transition-duration(100ms);
+    @include transition-timing-function(ease-in);
+
     padding: .5rem 2rem;
     font-size: 1rem;
-    transition: .1s ease-in;
     border: none;
     color: darker($accent, 30%);
     cursor: pointer;
 
     @include breakpoint($tiny $medium) {
-        animation: expand 300ms ease forwards;        
+        animation: expand 300ms ease forwards;
         font-size: 125%;
     }
 
