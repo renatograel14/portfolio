@@ -13,4 +13,8 @@ export class WelcomeComponent implements OnInit {
 
     constructor() { }
     ngOnInit() { }
+
+    goGithub() {
+        window.open("https://github.com/renatograel14");
+    }
 }

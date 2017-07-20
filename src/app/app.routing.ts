@@ -4,7 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 import {
   ExperienceComponent,
   WelcomeComponent,
-  SkillsComponent
+  SkillsComponent,
+  AboutComponent
 } from './pages';
 import { PageGuard } from './theme/guards/page-active.guard';
 
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'welcome', canActivate: [PageGuard], component: WelcomeComponent },
   { path: 'exp', canActivate: [PageGuard], component: ExperienceComponent },
   { path: 'skills', canActivate: [PageGuard], component: SkillsComponent },
+  { path: 'about', canActivate: [PageGuard], component: AboutComponent },
 ];
 
 @NgModule({
@@ -24,5 +26,6 @@ export class AppRoutingModule { }
 export const routedComponents = [
   WelcomeComponent,
   ExperienceComponent,
-  SkillsComponent
+  SkillsComponent,
+  AboutComponent
 ];

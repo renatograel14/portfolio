@@ -71,7 +71,7 @@
     opacity: 0;
     transition: opacity .3s ease-out;
     font-size: 120%;
-
+    z-index: 5;
     @include breakpoint($tiny $medium) {
         opacity: 1;
         visibility: visible;

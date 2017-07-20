@@ -84,17 +84,16 @@ footer {
 
 .welcome {
     font-size: 110%;
-
+    z-index: -10;
     @include background-image(radial-gradient(250px 250px, transparentize(black, 0.1) 50px, transparent));
 
     height: 500px;
-    width: 500px;
+    width: 550px;
 
-    @include breakpoint($tiny $small) {
+    @include breakpoint($tiny $medium) {
         @include background-image(radial-gradient(100px 100px, transparentize(black, 0.1) 50px, transparent));
 
-        height: 200px;
-        width: 200px;
+        width: 90%;
     }
 }
 
@@ -118,7 +117,7 @@ footer {
     width: span(10);
     border-bottom: 1px solid lighten($accent, 10%);
     overflow: hidden;
-
+    padding: 20px;
     // background-color: $secundary;
     margin: 20px auto;
 
@@ -172,6 +171,13 @@ footer {
             margin-right: 0 !important;
             border: none;
         }
+    }
+
+    
+    ul {
+        padding-left: 18px;
+        font-size: 18px;
+        list-style-image: url(~assets/img/check-mark.svg);
     }
 }
 

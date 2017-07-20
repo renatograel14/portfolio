@@ -21,7 +21,7 @@ export class MenuComponent implements OnInit {
     }, {
       id: 'about',
       name: 'About me',
-      path: ['']
+      path: ['about']
     }, {
       id: 'contact',
       name: 'Contact me',
