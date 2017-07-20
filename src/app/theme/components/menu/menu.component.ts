@@ -19,6 +19,10 @@ export class MenuComponent implements OnInit {
       name: 'Skills',
       path: ['skills']
     }, {
+      id: 'projects',
+      name: 'Projects',
+      path: ['projects']
+    },{
       id: 'about',
       name: 'About me',
       path: ['about']

@@ -83,8 +83,42 @@ footer {
     }
 }
 
+.galery {
+    padding: gutter() * 2;
+    width: 100%;
+
+    section {
+        display: inline-block;
+    }
+
+    p {
+        height: 100%;
+        font-size: 120%;
+        display: inline-block;
+    }
+
+    img {
+        margin: gutter();
+        height: 300px;
+        transition: 500ms;
+
+        @include breakpoint($tiny $small) {
+            display: block;
+            margin: gutter() auto;
+            @include box-shadow(0 0px 5px 3px transparentize($secundary, 0.7));            
+        }
+
+        &:hover {
+            @include box-shadow(0 0px 5px 3px transparentize($secundary, 0.7));
+        }
+    }
+
+   
+}
+
 .welcome {
     font-size: 110%;
+
     @include background-image(radial-gradient(250px 250px, transparentize(black, 0.1) 50px, transparent));
 
     height: 500px;
@@ -112,12 +146,12 @@ footer {
     overflow: hidden;
 }
 
-
 .block {
     width: span(10);
     border-bottom: 1px solid lighten($accent, 10%);
     overflow: hidden;
     padding: 20px;
+
     // background-color: $secundary;
     margin: 20px auto;
 
@@ -173,7 +207,6 @@ footer {
         }
     }
 
-    
     ul {
         padding-left: 18px;
         font-size: 18px;

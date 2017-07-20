@@ -108,7 +108,7 @@
         @include breakpoint($tiny $medium) {
             @include centerer;
 
-            width: $full-width / 2;
+            width: $full-width / 1.5;
             float: none !important;
             display: block;
         }
@@ -127,7 +127,7 @@
         li {
             float: left;
             text-align: center;
-            width: $fourth-width;
+            width: $fifth-width;
             padding: ($menu-height / 2) 0;
             line-height: 0;
             position: relative;
