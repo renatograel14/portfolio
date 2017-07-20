@@ -10,6 +10,7 @@ html, body {
 }
 
 body {
+    overflow: auto;
     background: url(~assets/img/WebDesignon.jpg) fixed;
     background-size: cover;
 }
@@ -84,7 +85,6 @@ footer {
 
 .welcome {
     font-size: 110%;
-    z-index: -10;
     @include background-image(radial-gradient(250px 250px, transparentize(black, 0.1) 50px, transparent));
 
     height: 500px;
